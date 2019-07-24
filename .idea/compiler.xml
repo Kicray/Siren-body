@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="body-entrance" />
+        <module name="body-pojo" />
+        <module name="body-service" />
+        <module name="siren" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="body-service" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
