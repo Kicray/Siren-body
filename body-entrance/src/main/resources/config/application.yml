@@ -1,0 +1,16 @@
+#set active environment
+spring: 
+    profiles: 
+        active: dev
+    devtools: 
+        restart: 
+            enabled: false
+    servlet:
+        multipart:
+            maxFileSize: 104857600
+            maxRequestSize: 104857600
+server: 
+    port: 8080
+    tomcat:
+        max-threads: 1000
+        max-connections: 10000

@@ -1,0 +1,6 @@
+siren:
+  swagger:
+      title: Body Of Siren
+      description: The kernel of Siren
+      termsOfServiceUrl: www.siren.com
+      version: 1.0.0
