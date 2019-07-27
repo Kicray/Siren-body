@@ -1,3 +1,29 @@
+spring:
+  datasource:
+    druid:
+      body:
+        uniqueResourceName: body-service
+        dataSourceClassName: com.alibaba.druid.pool.xa.DruidXADataSource
+        mapperLocations: classpath:mapper/*.xml
+        url: jdbc:mysql://192.168.0.197:3306/siren_body?useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&pinGlobalTxToPhysicalConnection=true
+        username: root
+        password: root
+        driverClassName: com.mysql.jdbc.Driver
+        initialSize: 1
+        maxActive: 1000
+        minIdle: 1
+        maxWait: 10000
+        poolPreparedStatements: false
+        maxPoolPreparedStatementPerConnectionSize: 20
+        validationQuery: SELECT 1
+        validationQueryTimeout: 20000
+        testOnBorrow: true
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        filters: stat,wall,log4j2
+
 siren:
   swagger:
       title: Body Of Siren
