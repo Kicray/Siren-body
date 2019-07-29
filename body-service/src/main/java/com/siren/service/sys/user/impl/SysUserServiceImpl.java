@@ -1,11 +1,29 @@
 package com.siren.service.sys.user.impl;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.siren.mapper.SySUserMapper;
+import com.siren.pojo.user.SysUser;
+import com.siren.response.BodyResp;
 import com.siren.service.sys.user.SysUserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @Author: Aqr
  * @Desc:
  * @Date: 2019/7/27
  */
+@Service
 public class SysUserServiceImpl implements SysUserService {
+
+    @Autowired
+    private SySUserMapper userMapper;
+
+    @Override
+    public BodyResp<List<SysUser>> getUserList() {
+        List<SysUser> result = userMapper.selectList(new EntityWrapper<SysUser>());
+        return new BodyResp<>(result);
+    }
 }
