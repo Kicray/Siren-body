@@ -17,4 +17,9 @@ public interface SysUserService {
      * @return
      */
     BodyResp<List<SysUser>> getUserList();
+    /**
+     * 通过用户id查询某个用户
+     * @return
+     */
+    BodyResp<SysUser> getUser(String id);
 }

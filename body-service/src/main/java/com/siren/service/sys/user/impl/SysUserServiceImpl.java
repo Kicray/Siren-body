@@ -26,4 +26,10 @@ public class SysUserServiceImpl implements SysUserService {
         List<SysUser> result = userMapper.selectList(new EntityWrapper<SysUser>());
         return new BodyResp<>(result);
     }
+
+    @Override
+    public BodyResp<SysUser> getUser(String id) {
+        SysUser result = userMapper.getById(id);
+        return new BodyResp<>(result);
+    }
 }
