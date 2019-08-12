@@ -22,14 +22,12 @@ public class SysUserServiceImpl implements SysUserService {
     private SySUserMapper userMapper;
 
     @Override
-    public BodyResp<List<SysUser>> getUserList() {
-        List<SysUser> result = userMapper.selectList(new EntityWrapper<SysUser>());
-        return new BodyResp<>(result);
+    public List<SysUser> getUserList() {
+        return userMapper.selectList(new EntityWrapper<SysUser>());
     }
 
     @Override
-    public BodyResp<SysUser> getUser(String id) {
-        SysUser result = userMapper.getById(id);
-        return new BodyResp<>(result);
+    public SysUser getUser(String id) {
+        return userMapper.getById(id);
     }
 }

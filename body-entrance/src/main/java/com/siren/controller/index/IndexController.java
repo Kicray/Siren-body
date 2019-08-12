@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("index")
-@Api("首页模块")
+@Api(tags = "首页模块")
 public class IndexController extends BaseController {
 
-    @ApiOperation("Aloha world")
+    @ApiOperation("接口测试")
     @GetMapping("hello")
     public String index(){
         return "Aloha Siren...";

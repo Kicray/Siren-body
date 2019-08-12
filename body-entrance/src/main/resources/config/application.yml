@@ -14,3 +14,10 @@ server:
     tomcat:
         max-threads: 1000
         max-connections: 10000
+#############SWAGGER CONFIG#################
+siren:
+    swagger:
+        title: SirenⅠ
+        description: 海妖之躯 The kernel of Siren
+        termsOfServiceUrl: www.siren.com
+        version: 1.0.0

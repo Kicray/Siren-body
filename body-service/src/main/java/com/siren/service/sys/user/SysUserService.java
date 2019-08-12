@@ -1,5 +1,6 @@
 package com.siren.service.sys.user;
 
+import com.baomidou.mybatisplus.plugins.Page;
 import com.siren.pojo.user.SysUser;
 import com.siren.response.BodyResp;
 
@@ -16,10 +17,10 @@ public interface SysUserService {
      * 获取用户列表
      * @return
      */
-    BodyResp<List<SysUser>> getUserList();
+    List<SysUser> getUserList();
     /**
      * 通过用户id查询某个用户
      * @return
      */
-    BodyResp<SysUser> getUser(String id);
+    SysUser getUser(String id);
 }
