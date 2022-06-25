@@ -1,10 +1,9 @@
-package com.siren.service.sys.user.impl;
+package com.siren.service.user.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.siren.mapper.SySUserMapper;
 import com.siren.pojo.user.SysUser;
-import com.siren.response.BodyResp;
-import com.siren.service.sys.user.SysUserService;
+import com.siren.service.user.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

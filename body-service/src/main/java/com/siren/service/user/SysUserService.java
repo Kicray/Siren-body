@@ -1,8 +1,6 @@
-package com.siren.service.sys.user;
+package com.siren.service.user;
 
-import com.baomidou.mybatisplus.plugins.Page;
 import com.siren.pojo.user.SysUser;
-import com.siren.response.BodyResp;
 
 import java.util.List;
 

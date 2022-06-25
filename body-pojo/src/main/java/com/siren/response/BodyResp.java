@@ -10,11 +10,18 @@ import lombok.Data;
  */
 @Data
 public class BodyResp<T> extends BaseResponse {
+    public BodyResp() {
+        super();
+    }
     public BodyResp(T data) {
         super(data);
     }
 
     public BodyResp(int code, String message, T data) {
         super(code, message, data);
+    }
+
+    public static <T> BodyResp ok(T t){
+        return new BodyResp(0,"",t);
     }
 }

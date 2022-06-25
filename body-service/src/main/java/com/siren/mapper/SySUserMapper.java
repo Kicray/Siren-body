@@ -2,6 +2,7 @@ package com.siren.mapper;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.siren.pojo.user.SysUser;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -10,6 +11,7 @@ import org.apache.ibatis.annotations.Select;
  * @Desc:
  * @Date: 2019/7/27
  */
+@Mapper
 public interface SySUserMapper extends BaseMapper<SysUser> {
 
     @Select("select " +

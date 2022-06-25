@@ -1,29 +1,19 @@
 spring:
   datasource:
-    druid:
-      body:
-        uniqueResourceName: body-service
-        dataSourceClassName: com.alibaba.druid.pool.xa.DruidXADataSource
-        mapperLocations: classpath:mapper/*.xml
-        url: jdbc:mysql://192.168.0.197:3306/siren_body?useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&pinGlobalTxToPhysicalConnection=true
-        username: root
-        password: root
-        driverClassName: com.mysql.jdbc.Driver
-        initialSize: 1
-        maxActive: 1000
-        minIdle: 1
-        maxWait: 10000
-        poolPreparedStatements: false
-        maxPoolPreparedStatementPerConnectionSize: 20
-        validationQuery: SELECT 1
-        validationQueryTimeout: 20000
-        testOnBorrow: true
-        testOnReturn: false
-        testWhileIdle: true
-        timeBetweenEvictionRunsMillis: 60000
-        minEvictableIdleTimeMillis: 300000
-        filters: stat,wall,log4j2
-
+    dynamic:
+      primary: master #设置默认的数据源或者数据源组,默认值即为master
+      strict: false #严格匹配数据源,默认false. true未匹配到指定数据源时抛异常,false使用默认数据源
+      datasource:
+        master:
+          url: jdbc:mysql://127.0.0.1:3306/siren_body?allowMultiQueries=true&rewriteBatchedStatements=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+          username: root
+          password: root
+          driver-class-name: com.mysql.jdbc.Driver # 3.2.0开始支持SPI可省略此配置
+        slaver:
+          url: jdbc:mysql://127.0.0.1:3306/siren_config?allowMultiQueries=true&rewriteBatchedStatements=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+          username: root
+          password: root
+          driver-class-name: com.mysql.jdbc.Driver # 3.2.0开始支持SPI可省略此配置
 siren:
   generator:
     globalgenerator:
@@ -41,3 +31,12 @@ siren:
       serviceName:
       serviceImplName:
       controllerName:
+mybatis-plus:
+  configuration:
+    # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
+    map-underscore-to-camel-case: true
+    # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+    call-setters-on-nulls: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+

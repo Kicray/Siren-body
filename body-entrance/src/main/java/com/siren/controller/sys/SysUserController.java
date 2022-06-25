@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.plugins.Page;
 import com.siren.controller.BaseController;
 import com.siren.pojo.user.SysUser;
 import com.siren.response.BodyResp;
-import com.siren.service.sys.user.SysUserService;
+import com.siren.service.user.SysUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -43,10 +43,9 @@ public class SysUserController extends BaseController {
         return new BodyResp<SysUser>(userService.getUser(id));
     }
 
-    @GetMapping("all")
+    @GetMapping("list")
     @ApiOperation("全部用户查询接口")
     public BodyResp<List<SysUser>> getTablesAll() {
         return new BodyResp<List<SysUser>>(userService.getUserList());
     }
-
 }
